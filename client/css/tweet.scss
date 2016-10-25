@@ -8,64 +8,24 @@
   opacity: 1;
 }
 
-.tweet.ng-enter, 
-.tweet.ng-leave,
-.tweet.ng-move {
-  animation: slideDown 0.5s linear;
-  -webkit-animation: slideDown 0.5s linear;
-  position: relative;
+
+.tweet.ng-enter {
+  transition: 1s ease all;
+  transition-delay: 1s;
+  transform: rotateX(90deg);
+}
+.tweet.ng-enter-active {
+  transform: rotateX(0deg);
 }
 
 .tweet.ng-leave {
-  z-index: -100;
+  transition: 0.5s ease all;
+  transform: rotateX(0deg);
 }
 
-.tweet.ng-enter {
-  z-index: 1000;
+.tweet.ng-leave-active {
+  transform: rotateX(90deg);
 }
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-  }
-  50%{
-    transform: translateY(8%);
-  }
-  65%{
-    transform: translateY(-4%);
-  }
-  80%{
-    transform: translateY(4%);
-  }
-  95%{
-    transform: translateY(-2%);
-  }     
-  100% {
-    transform: translateY(0%);
-  }   
-}
-
-@-webkit-keyframes slideDown {
-  0% {
-    -webkit-transform: translateY(-100%);
-  }
-  50%{
-    -webkit-transform: translateY(8%);
-  }
-  65%{
-    -webkit-transform: translateY(-4%);
-  }
-  80%{
-    -webkit-transform: translateY(4%);
-  }
-  95%{
-    -webkit-transform: translateY(-2%);
-  }     
-  100% {
-    -webkit-transform: translateY(0%);
-  } 
-}
-
 
 .header-name {
   font-size: 18px;
